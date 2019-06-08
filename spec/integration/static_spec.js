@@ -8,15 +8,16 @@ describe("routes : static", () => {
   describe("GET /", () => {
 
 //#2
-    it("should return status code 200", (done) => {
+    it("should return status code 200 and have 'Welcome to Grocery List' in the body of the response", (done) => {
 
 //#3
       request.get(base, (err, res, body) => {
         expect(res.statusCode).toBe(200);
+        expect(body).toContain("Welcome to Grocery List");
 
 //#4
         done();
-      });
+      })
     });
 
   });
