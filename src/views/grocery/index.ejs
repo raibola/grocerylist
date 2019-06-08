@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../static/partials/head.ejs %>
+  </head>
+  <body>
+    <main class="container text-center">
+      <% include ../static/partials/navbar.ejs %>
+
+      <h1>Grocery List</h1>
+
+      <ul class="list-group">
+<!-- #1 -->
+        <% groceries.forEach((grocery) => { %>
+<!-- #2 -->
+          <li class="list-group-item">
+            <a href="/grocery/<%= grocery.id %>"> <%= grocery.title %> </a>
+          </li>
+        <% }) %>
+      </ul>
+
+    </main>
+  </body>
+</html>

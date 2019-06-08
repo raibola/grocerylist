@@ -1,0 +1,14 @@
+const groceryQueries = require("../db/queries.grocery.js");
+
+
+module.exports = {
+    index(req, res, next){
+        groceryQueries.getAllGroceries((err, groceries) => {
+                    if(err){
+                      res.redirect(500, "static/index");
+                    } else {
+                      res.render("grocery/index", {groceries});
+                    }
+        })
+    }
+  }
