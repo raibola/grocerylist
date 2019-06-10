@@ -9,9 +9,25 @@
     <main class="container text-center">
       <h1><%= grocery.title %></h1>
       <a href="/grocery/<%= grocery.id %>/edit" class="btn btn-warning">Edit</a>
+      <a href="/grocery/<%= grocery.id %>/products/new" class="btn btn-success">New Product</a>
       <form style="display:initial" action="/grocery/<%= grocery.id %>/destroy" method="post">
         <button type="submit" class="btn btn-danger">Delete</button>
       </form>
+      <hr>
+
+      <h1>Products</h1>
+   
+      <ul class="list-group">
+        <% grocery.products.forEach((product) => { %>
+            
+          <li class="list-group-item">
+            <a href="/grocery/<%= grocery.id %>/products/<%= product.id %>"> <%= product.title %> </a>
+            <form action="/grocery/<%= product.groceryId %>/products/<%= product.id %>/update" method="post">
+                <input type="checkbox" name="purchased" id="true" value="true"><label for='purchased'>Purchased</label>
+              </form>
+          </li>
+        <% }) %>
+      </ul>
     </main>
 
     <% include ../static/partials/baseScripts.ejs %>
