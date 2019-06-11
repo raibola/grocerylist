@@ -47,6 +47,7 @@ module.exports = {
         });
       },
     update(req, res, next){
+      console.log(req.body)
         productQueries.updateProduct(req.params.id, req.body, (err, product) => {
           if(err || product == null){
             res.redirect(404, `/grocery/${req.params.groceryId}/products/${req.params.id}/edit`);
