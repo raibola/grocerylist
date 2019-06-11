@@ -18,7 +18,7 @@ All signed-in users will be able to add a product on a grocery list with the opt
 ## Testing
 Unit and integration tests are provided by Jasmine and can be found in the `spec` folder. 
 
-## npm Packages/Dependancies:
+## npm Packages/Dependencies:
 For a full list of dependencies, visit the `package.json` file. Highlights include:
 
 * PostgreSQL for modeling data in a relational database.
