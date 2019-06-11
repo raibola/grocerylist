@@ -9,14 +9,13 @@
     <main class="container text-center">
       <h1><%= grocery.title %></h1>
       <a href="/grocery/<%= grocery.id %>/edit" class="btn btn-warning">Edit</a>
-      <a href="/grocery/<%= grocery.id %>/products/new" class="btn btn-success">New Product</a>
       <form style="display:initial" action="/grocery/<%= grocery.id %>/destroy" method="post">
         <button type="submit" class="btn btn-danger">Delete</button>
       </form>
       <hr>
 
-      <h1>Products</h1>
-   
+      <h3>Products</h3>
+      <a href="/grocery/<%= grocery.id %>/products/new" class="btn btn-success">Add a Product</a>
       <ul class="list-group">
 
         <% grocery.products.forEach((product) => { %>
