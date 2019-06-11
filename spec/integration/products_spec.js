@@ -76,6 +76,31 @@ describe("routes : products", () => {
          }
        );
      });
+
+     it("should not create a new product that fails validations", (done) => {
+      const options = {
+        url: `${base}/${this.grocery.id}/products/create`,
+        form: {
+
+          title: "a"
+        }
+      };
+
+      request.post(options,
+        (err, res, body) => {
+
+          Product.findOne({where: {title: "a"}})
+          .then((product) => {
+              expect(product).toBeNull();
+              done();
+          })
+          .catch((err) => {
+            console.log(err);
+            done();
+          });
+        }
+      );
+    });
  
   });
 

@@ -137,12 +137,10 @@ describe("routes : groceries", () => {
                 form: {
                   title: "Chocolate"                }
               };
-     //#1
               request.post(options,
                 (err, res, body) => {
      
                 expect(err).toBeNull();
-     //#2
                 Grocery.findOne({
                   where: { id: this.grocery.id }
                 })
