@@ -18,15 +18,15 @@
       <h1>Products</h1>
    
       <ul class="list-group">
+
         <% grocery.products.forEach((product) => { %>
-            
+
           <li class="list-group-item">
-            <a href="/grocery/<%= grocery.id %>/products/<%= product.id %>"> <%= product.title %> </a>
-            <form action="/grocery/<%= product.groceryId %>/products/<%= product.id %>/update" method="post">
-                <input type="checkbox" name="purchased" id="true" value="true"><label for='purchased'>Purchased</label>
-              </form>
+              <a href="/grocery/<%= grocery.id %>/products/<%= product.id %>"> <%= product.title %></a>
+              <h6>Product purchased: <%= product.purchased %></h6>
           </li>
         <% }) %>
+
       </ul>
     </main>
 

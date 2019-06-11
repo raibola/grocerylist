@@ -7,6 +7,7 @@ module.exports = {
     create(req, res, next){
         let newProduct= {
           title: req.body.title,
+          purchased: req.body.purchased,
           groceryId: req.params.groceryId
         };
         productQueries.addProduct(newProduct, (err, product) => {
