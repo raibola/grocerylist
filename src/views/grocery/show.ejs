@@ -22,7 +22,12 @@
 
           <li class="list-group-item">
               <a href="/grocery/<%= grocery.id %>/products/<%= product.id %>"> <%= product.title %></a>
-              <h6>Product purchased: <%= product.purchased %></h6>
+              <% if(product.purchased === true) { %>
+              <h6>Product purchased: Yes</h6>
+              <% } else { %>
+              <h6>Product purchased: No</h6>
+              <% } %>
+
           </li>
         <% }) %>
 

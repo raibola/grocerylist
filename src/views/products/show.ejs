@@ -14,7 +14,7 @@
       <form style="display:initial" action="/grocery/<%= product.groceryId %>/products/<%= product.id %>/destroy" method="post">
         <button type="submit" class="btn btn-danger">Delete</button>
       </form>
-      <a href="/grocery/" class="btn btn-primary btn-md">Back to Grocery List</a>
+      <a href="/grocery/<%= product.groceryId %>" class="btn btn-primary btn-md">Back to Grocery List</a>
 
     </main>
 
